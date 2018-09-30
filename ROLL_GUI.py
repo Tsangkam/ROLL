@@ -37,6 +37,8 @@ def gui_start(folder_list, film_list):
 
     # 各类变量设置
     select_dir = tk.StringVar()    # 用于路径选择时的可变参数
+    amount = tk.StringVar()
+    amount.set(str(len(film_list)))
 
     # 设置窗口位置
     ww = 400
@@ -53,10 +55,15 @@ def gui_start(folder_list, film_list):
         folder = en1.get()
         if folder == '':
             return 0
+        if folder in folder_list:
+            select_dir.set('')
+            return 0
+
         folder_list.append(folder)
         film_finder(film_list, folder)
         listbox.insert(tk.END, folder)
         select_dir.set('')
+        amount.set(str(len(film_list)))
 
     # 从listbox中删除选中的目录及目录下的所有文件
     def remove():
@@ -68,6 +75,7 @@ def gui_start(folder_list, film_list):
                 del film_list[i]
         folder_list.remove(temp)
         listbox.delete(tk.ACTIVE)
+        amount.set(str(len(film_list)))
 
     # 随机选择一个文件
     def ROLL():
@@ -89,6 +97,8 @@ def gui_start(folder_list, film_list):
     tk.Button(root, text='移除', command=remove).place(x=300, y=60)
     tk.Button(root, text='ROLL!', command=ROLL).place(x=300, y=100)
     listbox = tk.Listbox(root, width=40)
+    tk.Label(root, textvariable=amount).place(x=380, y=180)
+    tk.Label(root, text='现有文件数量:').place(x=300, y=180)
 
     # 初始化listbox
     for item in folder_list:
