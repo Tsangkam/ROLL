@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4d7f8e4-212c-4141-9b31-bb51a63e1a87" name="Default Changelist" comment="divide into two file (class_film.py) &amp;&amp; ROLL.py">
+    <list default="true" id="a4d7f8e4-212c-4141-9b31-bb51a63e1a87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROLL.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROLL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_film.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_film.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,14 +36,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="py" value="1416" />
-          <entry key="txt" value="115" />
+          <entry key="txt" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="117" />
+          <entry key="PLAIN_TEXT" value="147" />
           <entry key="Python" value="1416" />
         </counts>
       </usages-collector>
@@ -72,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="81">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -221,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538275061506</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add ignore file and die 3">
+      <created>1538278449086</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1538278449086</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -254,7 +258,8 @@
     <MESSAGE value="this version is useless" />
     <MESSAGE value="this version is useless too" />
     <MESSAGE value="divide into two file (class_film.py) &amp;&amp; ROLL.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="divide into two file (class_film.py) &amp;&amp; ROLL.py" />
+    <MESSAGE value="add ignore file and die 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ignore file and die 3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data/history.txt">
@@ -296,7 +301,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
         </state>
       </provider>
     </entry>
