@@ -27,9 +27,12 @@ class Film:
         return self.__name
 
     # 查看电影路径
-    def path(self):
+    def father_path(self):
         return self.__path
 
     # 查看电影打开次数
     def times(self):
         return self.__times
+
+    def full_path(self):
+        return self.__path+'/'+self.__name

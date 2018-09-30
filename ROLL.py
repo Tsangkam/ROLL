@@ -6,17 +6,38 @@ ROLL! 功能介绍
 4.记录历史打开文件
 """
 
+from class_film import Film as film
 import random
 import os
-import tkinter as tk
-from tkinter.filedialog import askdirectory
+from ROLL_GUI import *
+
 
 counter = 0
 max_display = 0
+list_path = r'data/list.txt'
+history_path = r'data/history.txt'
 
 
-def main():
+# 用于读取之前导入的路径及电影名
+def read_list():
+    if not os.path.exists(list_path) or not os.path.exists(history_path):
+        os.mkdir(r'data')
+        f = open(list_path, 'w')
+        f.close()
+        f = open(history_path, 'w')
+        f.close()
+
+
+# 用于
+def save_list():
     pass
+
+
+# 主函数
+def main():
+    read_list()
+    gui_start()
+    save_list()
 
 
 main()
