@@ -7,6 +7,8 @@ import tkinter as tk
 from tkinter.filedialog import askdirectory
 import os
 import random
+import csv
+from config import *
 
 
 # 检测出文件夹内所有文件
@@ -33,7 +35,7 @@ def film_finder(film_list, folder):
 # 开启gui界面
 def gui_start(folder_list, film_list):
     root = tk.Tk()
-    root.title = 'ROLL!'
+    root.title("ROLL!")
 
     # 各类变量设置
     select_dir = tk.StringVar()    # 用于路径选择时的可变参数
@@ -68,7 +70,8 @@ def gui_start(folder_list, film_list):
     # 从listbox中删除选中的目录及目录下的所有文件
     def remove():
         temp = listbox.get(tk.ACTIVE)
-
+        if temp not in folder_list:
+            return 0
         # 删除film_list中的元素
         for i in range(len(film_list))[::-1]:
             if film_list[i].full_path()[0:len(temp)] == temp:
@@ -84,6 +87,33 @@ def gui_start(folder_list, film_list):
         a = random.choice(film_list)
         a.start()
 
+    # 查看历史观看记录
+    def history():
+        c = 1
+        top = tk.Toplevel()
+        top.title('history')
+        top_ww = 600
+        top_wh = 300
+        top_x = (sw-top_ww)/2
+        top_y = (sh-top_wh)/2
+        f_list = []
+        top.geometry('%dx%d+%d+%d' % (top_ww, top_wh, top_x, top_y))
+        tk.Label(top, text='文件名').grid(row=1, column=1, ipadx=15)
+        tk.Label(top, text='文件路径').grid(row=1, column=2, ipadx=15)
+        tk.Label(top, text='打开时间').grid(row=1, column=3, ipadx=15)
+        with open(history_path, 'r') as f:
+            c_file = csv.reader(f)
+            for f_item in c_file:
+                f_list.append(f_item)
+        for f_item in f_list[::-1]:
+            print(f_item[0])
+            tk.Label(top, text=f_item[0]).grid(row=c+1, column=1, ipadx=15)
+            tk.Label(top, text=f_item[1]).grid(row=c+1, column=2, ipadx=15)
+            tk.Label(top, text=f_item[2]).grid(row=c+1, column=3, ipadx=15)
+            c = c+1
+            if c>12:
+                break
+
     # 各类控件
     tk.Label(root, text='选择文件目录：').place(x=5, y=0)  # 文件夹选择提示标签
     en1 = tk.Entry(root, textvariable=select_dir, width=40)    # 文件目录输入
@@ -96,9 +126,10 @@ def gui_start(folder_list, film_list):
               command=insert).place(x=340, y=20)   # 导入按钮
     tk.Button(root, text='移除', command=remove).place(x=300, y=60)
     tk.Button(root, text='ROLL!', command=ROLL).place(x=300, y=100)
-    listbox = tk.Listbox(root, width=40)
+    listbox = tk.Listbox(root, width=40, height=8)
     tk.Label(root, textvariable=amount).place(x=380, y=180)
     tk.Label(root, text='现有文件数量:').place(x=300, y=180)
+    tk.Button(root, text='历史', command=history).place(x=340, y=60)
 
     # 初始化listbox
     for item in folder_list:
